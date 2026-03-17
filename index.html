@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+  (function () {
+    // Supabase PKCE: email link lands here with ?code=... — bounce into app
+    var code = new URLSearchParams(window.location.search).get('code');
+    if (code) {
+      window.location.replace(
+        'io.furlong.app://login-callback?code=' + encodeURIComponent(code)
+      );
+    }
+  })();
+</script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Furlong — Horse Racing Management Platform</title>
