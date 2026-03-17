@@ -762,6 +762,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#features">Features</a></li>
+    <li><a href="#billing">Owner Billing</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#about">About</a></li>
   </ul>
@@ -817,6 +818,10 @@
     <span class="strip-item">Feed Tracking</span>
     <div class="strip-dot"></div>
     <span class="strip-item">Vet Reports</span>
+    <div class="strip-dot"></div>
+    <span class="strip-item">Owner Billing</span>
+    <div class="strip-dot"></div>
+    <span class="strip-item">PDF Statements</span>
   </div>
 </div>
 
@@ -872,6 +877,16 @@
       <div class="feat-title">AI Insights <span style="font-family:'DM Mono',monospace; font-size:10px; color:var(--gold); vertical-align:middle; letter-spacing:0.1em;">PRO</span></div>
       <div class="feat-body">Injury risk scoring, peak form forecasting, race entry recommendations. Powered by your own data — not generic stats. Flags problems before they cost you a race.</div>
     </div>
+    <div class="feat-card reveal" style="border-color: rgba(201,146,42,0.3);">
+      <div class="feat-icon" style="background: rgba(201,146,42,0.18);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9922a" stroke-width="1.8" stroke-linecap="round">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+        </svg>
+      </div>
+      <div class="feat-title">Owner Billing <span style="font-family:'DM Mono',monospace; font-size:10px; color:var(--gold); vertical-align:middle; letter-spacing:0.1em;">PRO</span></div>
+      <div class="feat-body">Log expenses by category, split by ownership percentage, and generate professional PDF statements for every partner. No more building invoices in Word at midnight.</div>
+    </div>
+
     <div class="feat-card reveal">
       <div class="feat-icon">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9922a" stroke-width="1.8" stroke-linecap="round">
@@ -884,7 +899,149 @@
   </div>
 </section>
 
-<!-- MOCKUP -->
+<!-- BILLING FEATURE SECTION -->
+<section id="billing" style="padding-top:0; padding-bottom:0;">
+  <div style="background: var(--surface); border-radius:20px; padding:60px 48px; position:relative; overflow:hidden;">
+    <div style="position:absolute; top:0; left:0; right:0; height:3px; background: repeating-linear-gradient(90deg, var(--gold) 0px, var(--gold) 24px, transparent 24px, transparent 32px);"></div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;">
+
+      <!-- Left: copy -->
+      <div>
+        <p class="section-eyebrow reveal" style="color:var(--gold);">Owner billing</p>
+        <h2 class="section-title reveal" style="color:var(--cream);">Stop building<br>invoices in<br><span style="color:var(--gold);">Microsoft Word.</span></h2>
+        <p class="section-body reveal" style="margin-bottom:28px;">If you manage horses with partners, you know the pain. Every month: pull up Word, manually calculate each owner's share of feed, training, vet bills, farrier, labor — then email it and hope they pay.</p>
+        <p class="section-body reveal" style="margin-bottom:28px;">Furlong automates the whole process. Log expenses as they happen. At month end, hit Generate — and get a professional PDF statement for every owner, split to the exact percentage they own.</p>
+        <div class="reveal" style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <div style="width:24px; height:24px; border-radius:50%; background:rgba(201,146,42,0.15); border:0.5px solid rgba(201,146,42,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c9922a" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p style="font-family:'DM Sans',sans-serif; font-size:14px; font-weight:300; color:var(--tan); line-height:1.6; margin:0;">Log expenses by category — daily care, labor, training, farrier, vet, meds, entry fees, jockey fees, and more</p>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <div style="width:24px; height:24px; border-radius:50%; background:rgba(201,146,42,0.15); border:0.5px solid rgba(201,146,42,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c9922a" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p style="font-family:'DM Sans',sans-serif; font-size:14px; font-weight:300; color:var(--tan); line-height:1.6; margin:0;">Register unlimited partners per horse with their exact ownership percentage — handles 2% minority shares or 80% majority stakes equally</p>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <div style="width:24px; height:24px; border-radius:50%; background:rgba(201,146,42,0.15); border:0.5px solid rgba(201,146,42,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c9922a" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p style="font-family:'DM Sans',sans-serif; font-size:14px; font-weight:300; color:var(--tan); line-height:1.6; margin:0;">One tap generates professional PDF statements for all owners — with race winnings automatically credited back against their share</p>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <div style="width:24px; height:24px; border-radius:50%; background:rgba(201,146,42,0.15); border:0.5px solid rgba(201,146,42,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c9922a" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p style="font-family:'DM Sans',sans-serif; font-size:14px; font-weight:300; color:var(--tan); line-height:1.6; margin:0;">Track paid vs unpaid statements — payment processing link sharing coming soon</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: PDF statement mockup -->
+      <div class="reveal">
+        <div style="background:#fffcf7; border-radius:16px; padding:28px; border:0.5px solid #e0dbd0;">
+          <!-- Statement header -->
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid #e0dbd0;">
+            <div>
+              <div style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:2px; color:#1a1a1a;">CLEARWATER STABLES</div>
+              <div style="font-size:10px; color:#7a7268; font-family:'DM Mono',monospace;">123 Backstretch Rd · Lexington, KY</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:10px; font-weight:600; color:#888; font-family:'DM Mono',monospace; letter-spacing:0.1em;">OWNER STATEMENT</div>
+              <div style="font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:1px; color:#1a1a1a;">October 2025</div>
+            </div>
+          </div>
+          <!-- Parties row -->
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:20px; background:#f5f0e6; border-radius:8px; padding:14px;">
+            <div>
+              <div style="font-size:8px; font-weight:700; color:#7a7268; font-family:'DM Mono',monospace; letter-spacing:1px; margin-bottom:3px;">BILLED TO</div>
+              <div style="font-size:13px; font-weight:600; color:#1a1a1a;">J. Patterson</div>
+              <div style="font-size:10px; color:#7a7268;">jeff@email.com</div>
+            </div>
+            <div>
+              <div style="font-size:8px; font-weight:700; color:#7a7268; font-family:'DM Mono',monospace; letter-spacing:1px; margin-bottom:3px;">HORSE</div>
+              <div style="font-size:13px; font-weight:600; color:#1a1a1a;">Thunder Strike</div>
+              <div style="font-size:10px; color:#7a7268;">Trainer: J. Castellano</div>
+            </div>
+            <div>
+              <div style="font-size:8px; font-weight:700; color:#7a7268; font-family:'DM Mono',monospace; letter-spacing:1px; margin-bottom:3px;">OWNERSHIP</div>
+              <div style="font-size:18px; font-weight:700; color:#c9922a; font-family:'DM Mono',monospace;">40%</div>
+              <div style="font-size:10px; color:#7a7268;">of total expenses</div>
+            </div>
+          </div>
+          <!-- Expense lines -->
+          <table style="width:100%; font-size:10px; border-collapse:collapse; margin-bottom:14px;">
+            <tr style="background:#1a1a1a; color:#fff;">
+              <td style="padding:5px 8px; font-family:'DM Mono',monospace; letter-spacing:0.08em;">CATEGORY</td>
+              <td style="padding:5px 8px; font-family:'DM Mono',monospace; letter-spacing:0.08em;">DESCRIPTION</td>
+              <td style="padding:5px 8px; font-family:'DM Mono',monospace; letter-spacing:0.08em; text-align:right;">AMOUNT</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid #e0dbd0;">
+              <td style="padding:6px 8px; color:#5f5e5a;">Daily care</td>
+              <td style="padding:6px 8px; color:#3d3d3a;">Daily feed, bedding &amp; water × 31 @ $28.00</td>
+              <td style="padding:6px 8px; color:#3d3d3a; text-align:right; font-family:'DM Mono',monospace;">$868.00</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid #e0dbd0;">
+              <td style="padding:6px 8px; color:#5f5e5a;">Labor</td>
+              <td style="padding:6px 8px; color:#3d3d3a;">Groom labor × 31 @ $45.00</td>
+              <td style="padding:6px 8px; color:#3d3d3a; text-align:right; font-family:'DM Mono',monospace;">$1,395.00</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid #e0dbd0;">
+              <td style="padding:6px 8px; color:#5f5e5a;">Training</td>
+              <td style="padding:6px 8px; color:#3d3d3a;">Training day rate × 31 @ $85.00</td>
+              <td style="padding:6px 8px; color:#3d3d3a; text-align:right; font-family:'DM Mono',monospace;">$2,635.00</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid #e0dbd0;">
+              <td style="padding:6px 8px; color:#5f5e5a;">Farrier</td>
+              <td style="padding:6px 8px; color:#3d3d3a;">Full reset — Oct 8</td>
+              <td style="padding:6px 8px; color:#3d3d3a; text-align:right; font-family:'DM Mono',monospace;">$220.00</td>
+            </tr>
+            <tr style="border-bottom:0.5px solid #e0dbd0;">
+              <td style="padding:6px 8px; color:#5f5e5a;">Veterinary</td>
+              <td style="padding:6px 8px; color:#3d3d3a;">Pre-race exam + scope — Oct 14</td>
+              <td style="padding:6px 8px; color:#3d3d3a; text-align:right; font-family:'DM Mono',monospace;">$380.00</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 8px; color:#5f5e5a;">Entry fees</td>
+              <td style="padding:6px 8px; color:#3d3d3a;">Keeneland R7 entry — Oct 18</td>
+              <td style="padding:6px 8px; color:#3d3d3a; text-align:right; font-family:'DM Mono',monospace;">$150.00</td>
+            </tr>
+          </table>
+          <!-- Totals -->
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:2px;">
+            <div style="width:260px; display:flex; justify-content:space-between; background:#f5f0e6; padding:6px 10px; border-radius:4px; font-size:10px;">
+              <span style="color:#5f5e5a;">Total stable expenses</span>
+              <span style="font-family:'DM Mono',monospace; font-weight:600; color:#1a1a1a;">$5,648.00</span>
+            </div>
+            <div style="width:260px; display:flex; justify-content:space-between; background:#f5f0e6; padding:6px 10px; border-radius:4px; font-size:10px;">
+              <span style="color:#5f5e5a;">J. Patterson's share (40%)</span>
+              <span style="font-family:'DM Mono',monospace; font-weight:600; color:#1a1a1a;">$2,259.20</span>
+            </div>
+            <div style="width:260px; display:flex; justify-content:space-between; background:#f5f0e6; padding:6px 10px; border-radius:4px; font-size:10px;">
+              <span style="color:#4a6741;">Race winnings credit</span>
+              <span style="font-family:'DM Mono',monospace; font-weight:600; color:#4a6741;">− $340.00</span>
+            </div>
+            <div style="width:260px; display:flex; justify-content:space-between; background:#1a1a1a; padding:8px 10px; border-radius:4px; font-size:11px;">
+              <span style="color:#f5f0e6; font-weight:600;">AMOUNT DUE</span>
+              <span style="font-family:'DM Mono',monospace; font-weight:700; color:#c9922a; font-size:13px;">$1,919.20</span>
+            </div>
+          </div>
+          <!-- Footer -->
+          <div style="margin-top:14px; padding-top:10px; border-top:0.5px solid #e0dbd0; display:flex; justify-content:space-between; align-items:center;">
+            <div style="font-size:8px; color:#c8b99a; font-family:'DM Mono',monospace;">Generated by Furlong · getfurlong.com</div>
+            <div style="display:flex; gap:6px;">
+              <span style="font-size:9px; padding:3px 10px; border-radius:20px; background:rgba(201,146,42,0.1); border:0.5px solid rgba(201,146,42,0.3); color:#c9922a; font-family:'DM Mono',monospace;">SENT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 <div class="mockup-section">
   <div>
     <p class="section-eyebrow reveal">In practice</p>
@@ -967,6 +1124,7 @@
         <li>All AI insights features</li>
         <li>Race entry advisor</li>
         <li>Injury risk scoring</li>
+        <li>Owner billing & PDF statements</li>
         <li>Unlimited team members</li>
         <li>PDF vet report export</li>
         <li>Feed cost tracking</li>
