@@ -7,7 +7,7 @@
     var code = new URLSearchParams(window.location.search).get('code');
     if (code) {
       window.location.replace(
-        'io.furlong.app://login-callback?code=' + encodeURIComponent(code)
+        'com.getfurlong://login-callback?code=' + encodeURIComponent(code)
       );
     }
   })();
