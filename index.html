@@ -1220,18 +1220,58 @@
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   // waitlist handler
-  function joinWaitlist(source) {
+  const SUPABASE_URL = 'https://ucmuiqvtpjswbqxlshfi.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVjbXVpcXZ0cGpzd2JxeGxzaGZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3NzM2MzYsImV4cCI6MjA4OTM0OTYzNn0.HfCzey9PQr6W4v4Fqu2bB-A2_06kUKM5FtFWnofHrFI';
+
+  async function joinWaitlist(source) {
     const emailEl = document.getElementById(source === 'hero' ? 'hero-email' : 'cta-email');
     const successEl = document.getElementById(source === 'hero' ? 'hero-success' : 'cta-success');
+    const btnEl = emailEl.parentElement.querySelector('button');
     const email = emailEl.value.trim();
+
     if (!email || !email.includes('@')) {
       emailEl.style.borderColor = '#a63d2f';
       setTimeout(() => emailEl.style.borderColor = '', 1200);
       return;
     }
-    emailEl.parentElement.style.display = 'none';
-    if (source === 'hero') document.getElementById('hero-note').style.display = 'none';
-    successEl.style.display = 'block';
+
+    btnEl.disabled = true;
+    btnEl.textContent = 'Submitting…';
+
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Prefer': 'return=minimal',
+        },
+        body: JSON.stringify({ email, source }),
+      });
+
+      if (res.status === 409) {
+        // duplicate email
+        emailEl.style.borderColor = '#a63d2f';
+        btnEl.disabled = false;
+        btnEl.textContent = source === 'hero' ? 'Get Early Access' : 'Claim Your Spot';
+        successEl.textContent = 'You\'re already on the list!';
+        successEl.style.display = 'block';
+        return;
+      }
+
+      if (!res.ok) throw new Error(res.status);
+
+      emailEl.parentElement.style.display = 'none';
+      if (source === 'hero') document.getElementById('hero-note').style.display = 'none';
+      successEl.style.display = 'block';
+    } catch (err) {
+      btnEl.disabled = false;
+      btnEl.textContent = source === 'hero' ? 'Get Early Access' : 'Claim Your Spot';
+      emailEl.style.borderColor = '#a63d2f';
+      setTimeout(() => emailEl.style.borderColor = '', 1200);
+      console.error('Waitlist error:', err);
+    }
   }
 </script>
 </body>
