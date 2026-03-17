@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
+<script>
   (function () {
-    // Supabase PKCE: email link lands here with ?code=... — bounce into app
     var code = new URLSearchParams(window.location.search).get('code');
     if (code) {
       window.location.replace(
-        'com.getfurlong://login-callback?code=' + encodeURIComponent(code)
+        'intent://login-callback?code=' + encodeURIComponent(code) +
+        '#Intent;scheme=com.getfurlong;package=com.getfurlong.app;' +
+        'S.browser_fallback_url=https%3A%2F%2Fgetfurlong.com;end'
       );
     }
   })();
