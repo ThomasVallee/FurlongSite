@@ -776,6 +776,7 @@
     <li><a href="#features">Features</a></li>
     <li><a href="#billing">Owner Billing</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#about">About</a></li>
   </ul>
   <a href="#waitlist" class="nav-cta">Join Waitlist</a>
@@ -1160,7 +1161,270 @@
     </div>
   </div>
 </section>
-
+<!-- ── ROADMAP SECTION ─────────────────────────────────────────────────────
+     Place this just before your waitlist / CTA section.
+     Add <a href="#roadmap">Roadmap</a> to your nav.
+──────────────────────────────────────────────────────────────────────── -->
+ 
+<style>
+  @keyframes rm-pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.35; }
+  }
+  .rm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .rm-col-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .rm-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .rm-dot-shipped  { background: #4a6741; }
+  .rm-dot-progress { background: #c9922a; animation: rm-pulse 2s ease-in-out infinite; }
+  .rm-dot-planned  { background: #7a7268; }
+  .rm-col-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .rm-col-label-shipped  { color: #4a6741; }
+  .rm-col-label-progress { color: #c9922a; }
+  .rm-col-label-planned  { color: #7a7268; }
+  .rm-card {
+    background: var(--surface, #1e1e1e);
+    border-left: 3px solid;
+    border-radius: 0 10px 10px 0;
+    padding: 16px 18px;
+    transition: transform 0.2s ease;
+  }
+  .rm-card:hover { transform: translateX(4px); }
+  .rm-card-shipped  { border-left-color: #4a6741; }
+  .rm-card-progress { border-left-color: #c9922a; }
+  .rm-card-planned  { border-left-color: #7a7268; opacity: 0.75; }
+  .rm-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+  .rm-tag-shipped  { background: rgba(74,103,65,0.15);  color: #4a6741; }
+  .rm-tag-progress { background: rgba(201,146,42,0.12); color: #c9922a; }
+  .rm-tag-planned  { background: rgba(122,114,104,0.15);color: #7a7268; }
+  .rm-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px;
+    letter-spacing: 0.06em;
+    color: var(--cream, #f5f0e6);
+    margin-bottom: 6px;
+    margin-top: 0;
+  }
+  .rm-body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--fog, #7a7268);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .rm-footer {
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--fog, #7a7268);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 48px;
+  }
+  .rm-footer a { color: #c9922a; text-decoration: none; }
+  @media (max-width: 900px) {
+    .rm-grid { grid-template-columns: 1fr; }
+  }
+</style>
+ 
+<section id="roadmap">
+  <p class="section-eyebrow reveal">What's coming</p>
+  <h2 class="section-title reveal">The roadmap.</h2>
+  <p class="section-body reveal" style="margin-bottom:48px;">
+    We're building Furlong in public. Here's what's shipped, what's in progress,
+    and where we're headed — updated as things change.
+  </p>
+ 
+  <div class="rm-grid">
+ 
+    <!-- ── SHIPPED ───────────────────────────────────────────────────────── -->
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div class="rm-col-header">
+        <div class="rm-dot rm-dot-shipped"></div>
+        <span class="rm-col-label rm-col-label-shipped">Shipped</span>
+      </div>
+ 
+      <div class="rm-card rm-card-shipped reveal">
+        <span class="rm-tag rm-tag-shipped">Core</span>
+        <p class="rm-title">Health &amp; vet records</p>
+        <p class="rm-body">Every vet visit, medication course, and injury on record. Follow-up reminders, severity tracking, attachment storage for X-rays and docs.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-shipped reveal">
+        <span class="rm-tag rm-tag-shipped">Core</span>
+        <p class="rm-title">Training logs</p>
+        <p class="rm-body">Workouts, breezes, and gallops with time, distance, surface, effort rating, and Beyer figures. Full career history per horse.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-shipped reveal">
+        <span class="rm-tag rm-tag-shipped">Core</span>
+        <p class="rm-title">Race record</p>
+        <p class="rm-body">Full race history per horse. Career W‑P‑S record, earnings, Beyer average, and best surface — calculated automatically.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-shipped reveal">
+        <span class="rm-tag rm-tag-shipped">Pro</span>
+        <p class="rm-title">Owner billing — automated</p>
+        <p class="rm-body">Log expenses throughout the month. One tap generates professional PDF statements for every partner, split by exact ownership percentage.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-shipped reveal">
+        <span class="rm-tag rm-tag-shipped">Pro</span>
+        <p class="rm-title">AI injury risk scoring</p>
+        <p class="rm-body">Analyzes training load and health patterns. Flags overtraining signals in plain English before they cost you a race.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-shipped reveal">
+        <span class="rm-tag rm-tag-shipped">Pro</span>
+        <p class="rm-title">AI race entry advisor</p>
+        <p class="rm-body">Describe an upcoming race. The AI analyses the fit against your horse's form, surface preference, and Beyer range.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-shipped reveal">
+        <span class="rm-tag rm-tag-shipped">Pro</span>
+        <p class="rm-title">AI peak form forecast</p>
+        <p class="rm-body">8-week rolling training load analysis. Shows when a horse is building toward a peak, at peak, or being rested.</p>
+      </div>
+    </div>
+ 
+    <!-- ── IN PROGRESS ───────────────────────────────────────────────────── -->
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div class="rm-col-header">
+        <div class="rm-dot rm-dot-progress"></div>
+        <span class="rm-col-label rm-col-label-progress">In progress</span>
+      </div>
+ 
+      <div class="rm-card rm-card-progress reveal">
+        <span class="rm-tag rm-tag-progress">Pro</span>
+        <p class="rm-title">Vet report PDF</p>
+        <p class="rm-body">One-tap full health history document. Medications, injuries, vet visits with dates — formatted for when a horse ships to a new barn.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-progress reveal">
+        <span class="rm-tag rm-tag-progress">Pro</span>
+        <p class="rm-title">Owner updates</p>
+        <p class="rm-body">Weekly auto-generated summary email per horse. Workouts, health highlights, upcoming race targets. One tap to send to your ownership group.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-progress reveal">
+        <span class="rm-tag rm-tag-progress">Pro</span>
+        <p class="rm-title">Vaccination calendar</p>
+        <p class="rm-body">Track vaccines and worming per horse. Push reminders before due dates. Never miss a Coggins or booster again.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-progress reveal">
+        <span class="rm-tag rm-tag-progress">Pro</span>
+        <p class="rm-title">Team roles &amp; permissions</p>
+        <p class="rm-body">Grooms log, trainers approve. Owners read-only. Unlimited team members on a Pro stable — everyone sees what they need.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-progress reveal">
+        <span class="rm-tag rm-tag-progress">Pro</span>
+        <p class="rm-title">Owner portal</p>
+        <p class="rm-body">A read-only web link for each ownership partner. They see their horse's records and statements without needing app access.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-progress reveal">
+        <span class="rm-tag rm-tag-progress">Pro</span>
+        <p class="rm-title">Sale prep report</p>
+        <p class="rm-body">One-page horse summary for buyers. Pedigree, race record, best works, health history — formatted for a sale or private transaction.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-progress reveal">
+        <span class="rm-tag rm-tag-progress">Pro</span>
+        <p class="rm-title">CSV data export</p>
+        <p class="rm-body">Export all expenses, race results, and training data. For your accountant, your analyst, or your own spreadsheets.</p>
+      </div>
+    </div>
+ 
+    <!-- ── PLANNED ────────────────────────────────────────────────────────── -->
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div class="rm-col-header">
+        <div class="rm-dot rm-dot-planned"></div>
+        <span class="rm-col-label rm-col-label-planned">Planned</span>
+      </div>
+ 
+      <div class="rm-card rm-card-planned reveal">
+        <span class="rm-tag rm-tag-planned">Pro</span>
+        <p class="rm-title">Photo &amp; video updates</p>
+        <p class="rm-body">Attach media to training logs. Owners see their horse at work. Builds the relationship between trainer and ownership group.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-planned reveal">
+        <span class="rm-tag rm-tag-planned">Pro</span>
+        <p class="rm-title">Payment processing</p>
+        <p class="rm-body">Send owners a payment link directly from their statement. They pay online, you get notified. No more chasing checks at the end of the month.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-planned reveal">
+        <span class="rm-tag rm-tag-planned">Pro</span>
+        <p class="rm-title">Multi-stable</p>
+        <p class="rm-body">Manage horses across multiple locations under one account. For trainers split between two tracks simultaneously.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-planned reveal">
+        <span class="rm-tag rm-tag-planned">Stable</span>
+        <p class="rm-title">Condition book search</p>
+        <p class="rm-body">Search upcoming races nationally by distance, surface, class, age, and sex — matched against your horses' profiles automatically.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-planned reveal">
+        <span class="rm-tag rm-tag-planned">Stable</span>
+        <p class="rm-title">Equibase data integration</p>
+        <p class="rm-body">Auto-import race results, workouts, and entries for registered horses. No more manual logging of publicly available data.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-planned reveal">
+        <span class="rm-tag rm-tag-planned">Stable</span>
+        <p class="rm-title">Harness racing support</p>
+        <p class="rm-body">Full support for standardbred operations — USTA integration, pace figures, jog and training miles. The harness world deserves proper software too.</p>
+      </div>
+ 
+      <div class="rm-card rm-card-planned reveal">
+        <span class="rm-tag rm-tag-planned">Stable</span>
+        <p class="rm-title">Feed &amp; supply inventory</p>
+        <p class="rm-body">Track feed consumption, medication stock, and supply costs per horse. Know what you're spending before the end-of-month bill arrives.</p>
+      </div>
+    </div>
+ 
+  </div>
+ 
+  <p class="rm-footer reveal">
+    Have a feature request? &nbsp;·&nbsp;
+    <a href="mailto:hello@getfurlong.com">hello@getfurlong.com</a>
+  </p>
+ 
+</section>
 <!-- QUOTES -->
 <section id="about" style="padding-top:0;">
   <p class="section-eyebrow reveal">Early feedback</p>
