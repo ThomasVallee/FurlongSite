@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Delete Your Account — Furlong</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --track:  #1a1a1a;
+    --cream:  #f5f0e6;
+    --gold:   #c9922a;
+    --gold-lt:#f5e0b5;
+    --tan:    #c8b99a;
+    --fog:    #7a7268;
+    --white:  #fffcf7;
+    --card:   #242424;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--track);
+    color: var(--cream);
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 24px 120px;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--fog);
+    margin-bottom: 40px;
+  }
+  .back-link:hover { color: var(--gold); text-decoration: none; }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 6vw, 56px);
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--cream);
+    margin-top: 48px;
+    margin-bottom: 12px;
+  }
+
+  p, li {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--tan);
+    margin-bottom: 16px;
+  }
+
+  ol {
+    padding-left: 20px;
+    margin-bottom: 16px;
+  }
+
+  li { margin-bottom: 8px; }
+
+  strong { color: var(--cream); font-weight: 500; }
+
+  .email-link {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 16px;
+    color: var(--gold);
+    background: var(--card);
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin: 8px 0 24px;
+  }
+  .email-link:hover { text-decoration: none; color: var(--gold-lt); }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <a href="/" class="back-link">&larr; BACK TO FURLONG</a>
+
+  <h1>Delete Your Account</h1>
+
+  <p>We're sorry to see you go. If you'd like to delete your Furlong account and all associated data, send us an email and we'll take care of it.</p>
+
+  <a href="mailto:support@getfurlong.com?subject=Account%20Deletion%20Request" class="email-link">support@getfurlong.com</a>
+
+  <h2>How it works</h2>
+  <ol>
+    <li>Send an email to <strong>support@getfurlong.com</strong> from the email address associated with your Furlong account with the subject line "Account Deletion Request".</li>
+    <li>We'll verify your identity and confirm receipt within 2 business days.</li>
+    <li>Your account and all associated data will be permanently deleted within 30 days.</li>
+  </ol>
+
+  <h2>What gets deleted</h2>
+  <p>When your account is deleted, we permanently remove:</p>
+  <ol>
+    <li>Your account and profile information</li>
+    <li>All horse records, training logs, and health data</li>
+    <li>Billing records and owner statements</li>
+    <li>AI insights and generated reports</li>
+    <li>Team memberships and stable associations</li>
+  </ol>
+
+  <p>If you have an active Pro subscription, make sure to cancel it through the Apple App Store or Google Play Store before requesting deletion to avoid further charges.</p>
+
+  <p>For questions about your data, see our <a href="privacy.html">Privacy Policy</a>.</p>
+</div>
+
+</body>
+</html>
