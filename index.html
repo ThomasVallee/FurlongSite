@@ -3,13 +3,26 @@
 <head>
 <script>
   (function () {
-    var code = new URLSearchParams(window.location.search).get('code');
-    if (code) {
-      window.location.replace(
-        'intent://login-callback?code=' + encodeURIComponent(code) +
-        '#Intent;scheme=com.getfurlong;package=com.getfurlong.app;' +
-        'S.browser_fallback_url=https%3A%2F%2Fgetfurlong.com;end'
-      );
+    var search = window.location.search;
+    var hash = window.location.hash;
+    var searchParams = new URLSearchParams(search);
+    var hashParams = new URLSearchParams(hash.substring(1));
+    var code = searchParams.get('code') || hashParams.get('code');
+    var accessToken = searchParams.get('access_token') || hashParams.get('access_token');
+
+    if (code || accessToken) {
+      var payload = search + hash;
+      var isAndroid = /android/i.test(navigator.userAgent);
+
+      if (isAndroid) {
+        window.location.replace(
+          'intent://login-callback' + payload +
+          '#Intent;scheme=com.getfurlong;package=com.getfurlong.app;' +
+          'S.browser_fallback_url=https%3A%2F%2Fgetfurlong.com;end'
+        );
+      } else {
+        window.location.replace('com.getfurlong://login-callback' + payload);
+      }
     }
   })();
 </script>
