@@ -805,7 +805,7 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#about">About</a></li>
   </ul>
-  <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+  <a href="#download" class="nav-cta">Download</a>
 </nav>
 
 <!-- HERO -->
@@ -815,12 +815,12 @@
   <h1 class="hero-headline">The operating<br>system for<br><span>racing stables</span></h1>
   <p class="hero-sub">Health logs, training plans, race history, and AI-powered insights — bringing your stable into the modern era.</p>
 
-  <div class="waitlist-form" id="hero-form">
-    <input class="waitlist-input" type="email" placeholder="trainer@yourstable.com" id="hero-email"/>
-    <button class="waitlist-btn" onclick="joinWaitlist('hero')">Get Early Access</button>
+  <div style="display:flex; flex-direction:column; align-items:center; gap:12px; margin-top:8px;">
+    <a href="https://apps.apple.com/app/furlong/id6744227498" target="_blank" rel="noopener" style="display:inline-block;">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height:54px;"/>
+    </a>
+    <p style="font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--fog); margin:0;">ANDROID · COMING SOON</p>
   </div>
-  <p class="waitlist-note" id="hero-note">No credit card · Free during beta · US racing stables only</p>
-  <p class="success-msg" id="hero-success">You're on the list. We'll be in touch.</p>
 
   <div class="hero-stats">
     <div style="text-align:center;">
@@ -1152,7 +1152,7 @@
         <li>2 team members</li>
         <li>Mobile app</li>
       </ul>
-      <button class="price-btn ghost">Join waitlist</button>
+      <a href="https://apps.apple.com/app/furlong/id6744227498" target="_blank" rel="noopener" class="price-btn ghost" style="text-align:center; text-decoration:none;">Download Free</a>
     </div>
 
     <div class="price-card featured reveal">
@@ -1172,7 +1172,7 @@
         <li>Vet report PDF export</li>
         <li>Sale prep report</li>
       </ul>
-      <button class="price-btn solid">Join waitlist</button>
+      <a href="https://apps.apple.com/app/furlong/id6744227498" target="_blank" rel="noopener" class="price-btn solid" style="text-align:center; text-decoration:none;">Download on iOS</a>
     </div>
 
     <div class="price-card reveal">
@@ -1506,42 +1506,22 @@
   </p>
  
 </section>
-<!-- QUOTES -->
+<!-- QUOTES (hidden until we have real reviews)
 <section id="about" style="padding-top:0;">
-  <p class="section-eyebrow reveal">Early feedback</p>
-  <h2 class="section-title reveal">From the<br>backstretch.</h2>
-
-  <div class="quotes-grid">
-    <div class="quote-card reveal">
-      <div class="quote-stars">★★★★★</div>
-      <p class="quote-text">"I've been training for 22 years and we've always done everything on paper. Seeing injury patterns visualized across a horse's training block — that alone would have saved me three horses."</p>
-      <div class="quote-name">Mike Harraway</div>
-      <div class="quote-author">Licensed trainer · Churchill Downs</div>
-    </div>
-    <div class="quote-card reveal">
-      <div class="quote-stars">★★★★★</div>
-      <p class="quote-text">"As an owner with horses in two different barns, I was always chasing updates on WhatsApp. Furlong gives me one place to see everything and actually trust the information."</p>
-      <div class="quote-name">Sandra Okonkwo</div>
-      <div class="quote-author">Owner · 8 horses · Saratoga</div>
-    </div>
-    <div class="quote-card reveal">
-      <div class="quote-stars">★★★★★</div>
-      <p class="quote-text">"The race entry advisor matched our mare to a spot at Keeneland that I'd been overlooking. She ran third and paid $18. Paid for a year of the app in one race."</p>
-      <div class="quote-name">D. Marchetti</div>
-      <div class="quote-author">Trainer · Keeneland · Belmont</div>
-    </div>
-  </div>
+  ...
 </section>
+-->
 
-<!-- WAITLIST CTA -->
-<div class="cta-section" id="waitlist">
+<!-- DOWNLOAD CTA -->
+<div class="cta-section" id="download">
   <h2 class="cta-headline">Ready to run<br>a smarter stable?</h2>
-  <p class="cta-sub">Join the waitlist. First 50 stables get 6 months of Pro, free.</p>
-  <div class="cta-form">
-    <input class="cta-input" type="email" placeholder="your@email.com" id="cta-email"/>
-    <button class="cta-btn" onclick="joinWaitlist('cta')">Claim Your Spot</button>
+  <p class="cta-sub">Available now on iOS. Android coming soon.</p>
+  <div style="display:flex; flex-direction:column; align-items:center; gap:16px; position:relative; z-index:1;">
+    <a href="https://apps.apple.com/app/furlong/id6744227498" target="_blank" rel="noopener" style="display:inline-block;">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height:54px;"/>
+    </a>
+    <p style="font-family:'DM Mono',monospace; font-size:12px; letter-spacing:0.1em; color:var(--fog); margin:0;">ANDROID · COMING SOON</p>
   </div>
-  <p class="success-msg" id="cta-success" style="color:var(--track); margin-top:16px;">You're on the list. First 50 get 6 months Pro free.</p>
 </div>
 
 <!-- FOOTER -->
@@ -1552,7 +1532,7 @@
     <a href="terms.html">Terms</a>
     <a href="#">Contact</a>
   </div>
-  <div class="footer-note">© 2025 Furlong · Built for US racing stables</div>
+  <div class="footer-note">© 2026 Furlong · Built for US racing stables</div>
 </footer>
 
 <script>
@@ -1565,60 +1545,6 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // waitlist handler
-  const SUPABASE_URL = 'https://ucmuiqvtpjswbqxlshfi.supabase.co';
-  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVjbXVpcXZ0cGpzd2JxeGxzaGZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3NzM2MzYsImV4cCI6MjA4OTM0OTYzNn0.HfCzey9PQr6W4v4Fqu2bB-A2_06kUKM5FtFWnofHrFI';
-
-  async function joinWaitlist(source) {
-    const emailEl = document.getElementById(source === 'hero' ? 'hero-email' : 'cta-email');
-    const successEl = document.getElementById(source === 'hero' ? 'hero-success' : 'cta-success');
-    const btnEl = emailEl.parentElement.querySelector('button');
-    const email = emailEl.value.trim();
-
-    if (!email || !email.includes('@')) {
-      emailEl.style.borderColor = '#a63d2f';
-      setTimeout(() => emailEl.style.borderColor = '', 1200);
-      return;
-    }
-
-    btnEl.disabled = true;
-    btnEl.textContent = 'Submitting…';
-
-    try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': SUPABASE_ANON_KEY,
-          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-          'Prefer': 'return=minimal',
-        },
-        body: JSON.stringify({ email, source }),
-      });
-
-      if (res.status === 409) {
-        // duplicate email
-        emailEl.style.borderColor = '#a63d2f';
-        btnEl.disabled = false;
-        btnEl.textContent = source === 'hero' ? 'Get Early Access' : 'Claim Your Spot';
-        successEl.textContent = 'You\'re already on the list!';
-        successEl.style.display = 'block';
-        return;
-      }
-
-      if (!res.ok) throw new Error(res.status);
-
-      emailEl.parentElement.style.display = 'none';
-      if (source === 'hero') document.getElementById('hero-note').style.display = 'none';
-      successEl.style.display = 'block';
-    } catch (err) {
-      btnEl.disabled = false;
-      btnEl.textContent = source === 'hero' ? 'Get Early Access' : 'Claim Your Spot';
-      emailEl.style.borderColor = '#a63d2f';
-      setTimeout(() => emailEl.style.borderColor = '', 1200);
-      console.error('Waitlist error:', err);
-    }
-  }
 </script>
 </body>
 </html>
