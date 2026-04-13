@@ -43,7 +43,7 @@
 <meta name="twitter:image" content="https://getfurlong.com/og-image.png"/>
 <link rel="icon" type="image/svg+xml" href="logo.svg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
   :root {
     --track:  #1a1a1a;
@@ -752,6 +752,16 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
+  @keyframes importPulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50%      { transform: scale(1.4); opacity: 0.2; }
+  }
+
+  @keyframes importFloat {
+    0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+    50%      { transform: translateY(-6px) rotate(var(--rot, 0deg)); }
+  }
+
   .reveal {
     opacity: 0;
     transform: translateY(20px);
@@ -785,6 +795,13 @@
     footer { flex-direction: column; gap: 16px; text-align: center; }
     #billing > div { padding: 40px 20px !important; }
     #billing > div > div { grid-template-columns: 1fr !important; gap: 32px !important; }
+    #import > div { padding: 40px 20px !important; }
+    #import .import-flow { grid-template-columns: 1fr !important; gap: 32px !important; }
+    #import .import-sources { min-height: 420px !important; }
+    #import .import-tiles { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 480px) {
+    #import .import-tiles { grid-template-columns: 1fr !important; }
   }
 </style>
 </head>
@@ -800,6 +817,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#features">Features</a></li>
+    <li><a href="#import">Smart Import</a></li>
     <li><a href="#billing">Owner Billing</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -861,6 +879,8 @@
     <span class="strip-item">Owner Billing</span>
     <div class="strip-dot"></div>
     <span class="strip-item">PDF Statements</span>
+    <div class="strip-dot"></div>
+    <span class="strip-item">Smart Import</span>
   </div>
 </div>
 
@@ -1081,6 +1101,328 @@
     </div>
   </div>
 </section>
+
+<!-- SMART IMPORT SECTION -->
+<section id="import" style="padding-top:60px; padding-bottom:0;">
+  <div style="background: var(--card); border-radius:20px; padding:60px 40px; position:relative; overflow:hidden; border: 0.5px solid rgba(200,185,154,0.12);">
+    <!-- Top gold stripe -->
+    <div style="position:absolute; top:0; left:0; right:0; height:3px; background: repeating-linear-gradient(90deg, var(--gold) 0px, var(--gold) 24px, transparent 24px, transparent 32px);"></div>
+    <!-- Ambient gold glow behind AI orb -->
+    <div style="position:absolute; top:55%; left:50%; transform:translate(-50%,-50%); width:700px; height:700px; background:radial-gradient(circle, rgba(201,146,42,0.08) 0%, transparent 60%); pointer-events:none;"></div>
+
+    <!-- Centered header -->
+    <div style="text-align:center; max-width:760px; margin:0 auto 56px; position:relative;">
+      <div style="display:inline-flex; align-items:center; gap:10px; margin-bottom:16px;">
+        <span style="font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.24em; padding:4px 10px; background:var(--gold); color:var(--white); border-radius:4px;">NEW</span>
+        <p class="section-eyebrow" style="margin:0; color:var(--gold);">Smart Import</p>
+      </div>
+      <h2 class="section-title reveal" style="color:var(--cream);">Import <span style="color:var(--gold);">anything.</span><br>From anywhere.</h2>
+      <p class="section-body reveal" style="margin:20px auto 14px; max-width:640px;">Handwritten workout sheets. Phone photos of a whiteboard. Equibase screenshots. Vet PDFs. Even a text from your trainer. Our AI reads any of it — and files the data exactly where it belongs.</p>
+      <p class="reveal" style="margin:0 auto; max-width:620px; font-size:14px; font-weight:300; color:var(--tan); line-height:1.75; padding:14px 18px; border-left:2px solid var(--gold); background:rgba(201,146,42,0.06); border-radius:0 8px 8px 0; text-align:left;"><strong style="color:var(--cream); font-weight:500;">The typing problem, solved.</strong> Most horsemen aren't app people — they write things down, snap pictures, keep receipts. Smart Import meets them where they already work. Keep your notebook. Keep your camera roll. Let the AI do the data entry.</p>
+    </div>
+
+    <!-- Three-column flow: sources → AI → Furlong -->
+    <div class="import-flow" style="display:grid; grid-template-columns: 1fr auto 1fr; gap:40px; align-items:center; position:relative; margin-bottom:60px; z-index:2;">
+
+      <!-- LEFT: fanned source mockups -->
+      <div class="import-sources reveal" style="position:relative; min-height:460px;">
+
+        <!-- Handwritten workout sheet -->
+        <div style="--rot:-5deg; position:absolute; top:0; left:8%; width:76%; background:#fdfaf3; border-radius:10px; padding:16px; border:0.5px solid #d8cfbd; box-shadow:0 14px 40px rgba(0,0,0,0.5); z-index:4; transform:rotate(-5deg); animation: importFloat 6s ease-in-out infinite;">
+          <div style="display:flex; align-items:center; gap:6px; margin-bottom:10px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7a7268" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+            <span style="font-family:'DM Mono',monospace; font-size:8px; letter-spacing:0.14em; color:#7a7268; text-transform:uppercase;">Photo · handwritten</span>
+          </div>
+          <div style="font-family:'Caveat', cursive; font-size:17px; color:#2a2a2a; line-height:1.35; font-weight:500;">
+            Oct 18 — Thunder<br>
+            5f breeze, fast dirt<br>
+            1:00.2, Castellano up<br>
+            Felt strong, sound.
+          </div>
+        </div>
+
+        <!-- Race result screenshot -->
+        <div style="--rot:3deg; position:absolute; top:100px; left:-4%; width:72%; background:#1a1a1a; border-radius:10px; padding:12px; border:0.5px solid #3a3a3a; box-shadow:0 14px 40px rgba(0,0,0,0.6); z-index:3; transform:rotate(3deg); animation: importFloat 7s ease-in-out infinite; animation-delay: -1.5s;">
+          <div style="display:flex; align-items:center; gap:6px; margin-bottom:8px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8a8a8a" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="20" x2="16" y2="20"/></svg>
+            <span style="font-family:'DM Mono',monospace; font-size:8px; letter-spacing:0.14em; color:#8a8a8a; text-transform:uppercase;">Screenshot · Equibase</span>
+          </div>
+          <div style="background:#fff; border-radius:4px; padding:8px; font-family:Arial,sans-serif; font-size:9px; color:#333;">
+            <div style="font-weight:700; font-size:10px; color:#003a6c; margin-bottom:4px;">KEENELAND · R7 · Oct 18</div>
+            <div style="display:grid; grid-template-columns: 20px 1fr 30px 36px; gap:4px; padding:3px 0; border-bottom:0.5px solid #ddd; font-weight:700; font-size:8px; color:#666;">
+              <span>FIN</span><span>HORSE</span><span>BEYER</span><span>$</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 20px 1fr 30px 36px; gap:4px; padding:3px 0; border-bottom:0.5px solid #f0f0f0;">
+              <span style="font-weight:700; color:#444;">1</span><span>Silver Reign</span><span>94</span><span>$51k</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 20px 1fr 30px 36px; gap:4px; padding:3px 0; border-bottom:0.5px solid #f0f0f0; background:#fffbe8;">
+              <span style="font-weight:700; color:#c9922a;">3</span><span style="font-weight:600;">Thunder Strike</span><span>91</span><span>$8.5k</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 20px 1fr; gap:4px; padding:3px 0; font-size:8px; color:#888;">
+              <span>—</span><span>6F · Dirt · 1:09.84 · Fast</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PDF vet invoice -->
+        <div style="--rot:-3deg; position:absolute; top:230px; left:18%; width:74%; background:#fffcf7; border-radius:10px; padding:14px; border:0.5px solid #d8cfbd; box-shadow:0 14px 40px rgba(0,0,0,0.5); z-index:2; transform:rotate(-3deg); animation: importFloat 8s ease-in-out infinite; animation-delay: -3s;">
+          <div style="display:flex; align-items:center; gap:6px; margin-bottom:8px;">
+            <div style="width:20px; height:20px; background:#a63d2f; border-radius:3px; display:flex; align-items:center; justify-content:center;">
+              <span style="color:#fff; font-size:7px; font-weight:700; font-family:Arial;">PDF</span>
+            </div>
+            <span style="font-family:'DM Mono',monospace; font-size:8px; letter-spacing:0.14em; color:#7a7268; text-transform:uppercase;">vet_oct18.pdf</span>
+          </div>
+          <div style="font-family:'DM Mono',monospace; font-size:9px; color:#3d3d3a; line-height:1.7;">
+            <div style="font-weight:700; color:#1a1a1a; margin-bottom:3px;">DR. A. MENDOZA DVM</div>
+            <div>Patient: Thunder Strike</div>
+            <div>Flunixin 500mg IM</div>
+            <div>LF fetlock: mild effusion</div>
+            <div style="margin-top:5px; padding-top:5px; border-top:0.5px dashed #d8cfbd; color:#a63d2f; font-weight:700;">TOTAL: $380.00</div>
+          </div>
+        </div>
+
+        <!-- Text message from trainer -->
+        <div style="--rot:4deg; position:absolute; top:355px; left:2%; width:74%; background:#1a1a1a; border-radius:10px; padding:12px; border:0.5px solid #3a3a3a; box-shadow:0 14px 40px rgba(0,0,0,0.6); z-index:1; transform:rotate(4deg); animation: importFloat 7.5s ease-in-out infinite; animation-delay: -4.5s;">
+          <div style="display:flex; align-items:center; gap:6px; margin-bottom:8px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8a8a8a" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <span style="font-family:'DM Mono',monospace; font-size:8px; letter-spacing:0.14em; color:#8a8a8a; text-transform:uppercase;">Text · from trainer</span>
+          </div>
+          <div style="background:#3a3a3a; color:#f5f0e6; font-size:11px; padding:7px 11px; border-radius:14px 14px 14px 4px; max-width:90%; line-height:1.4;">Gave Thunder 500mg flunixin IM this AM. Left fore still warm but he races Sat 👍</div>
+        </div>
+
+      </div>
+
+      <!-- CENTER: AI orb -->
+      <div style="position:relative; display:flex; align-items:center; justify-content:center; width:130px; height:130px; margin:0 auto;">
+        <div style="position:absolute; inset:0; border-radius:50%; background: radial-gradient(circle, rgba(201,146,42,0.5) 0%, transparent 70%); animation: importPulse 2.6s ease-in-out infinite;"></div>
+        <div style="position:absolute; inset:10px; border-radius:50%; border:0.5px solid rgba(201,146,42,0.25);"></div>
+        <div style="position:relative; width:80px; height:80px; border-radius:50%; background: linear-gradient(135deg, #d9a238, #8a6418); display:flex; align-items:center; justify-content:center; box-shadow: 0 0 50px rgba(201,146,42,0.55), inset 0 0 20px rgba(255,255,255,0.12);">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fffcf7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l2.1 5.2L20 9l-5.2 2.1L12 17l-2.1-5.2L4 9l5.9-1.8z"/>
+            <path d="M19 15l.9 2.1 2.1.9-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z" opacity="0.7"/>
+          </svg>
+        </div>
+        <div style="position:absolute; bottom:-30px; left:50%; transform:translateX(-50%); font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.22em; color:var(--gold); text-transform:uppercase; white-space:nowrap;">AI Parsing</div>
+      </div>
+
+      <!-- RIGHT: phone-style output -->
+      <div style="display:flex; justify-content:center;">
+        <div style="background: #0e0e0e; border-radius:32px; padding:10px; border: 1px solid rgba(200,185,154,0.2); box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,146,42,0.15); width:300px;">
+          <!-- Phone notch -->
+          <div style="display:flex; justify-content:center; padding:4px 0 8px;">
+            <div style="width:60px; height:5px; background:#2a2a2a; border-radius:3px;"></div>
+          </div>
+          <!-- Screen -->
+          <div style="background: var(--track); border-radius:22px; padding:18px; min-height:420px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px; padding-bottom:12px; border-bottom:0.5px solid rgba(200,185,154,0.12);">
+              <div>
+                <div style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.06em; color:var(--cream);">THUNDER STRIKE</div>
+                <div style="font-family:'DM Mono',monospace; font-size:8px; letter-spacing:0.12em; color:var(--fog); margin-top:2px;">IMPORTED TODAY · 4 ENTRIES</div>
+              </div>
+              <span style="font-size:8px; padding:3px 8px; border-radius:20px; background:rgba(74,103,65,0.25); color:#7ab86e; font-family:'DM Mono',monospace; letter-spacing:0.08em; white-space:nowrap;">✓ SAVED</span>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="background:rgba(245,240,230,0.04); border-left:2px solid var(--gold); border-radius:4px; padding:10px 12px;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                  <span style="font-family:'DM Mono',monospace; font-size:8px; letter-spacing:0.14em; color:var(--gold); text-transform:uppercase;">Training</span>
+                  <span style="font-family:'DM Mono',monospace; font-size:8px; color:var(--fog);">Oct 18</span>
+                </div>
+                <div style="font-size:12px; color:var(--cream); font-weight:500;">5f breeze · 1:00.2</div>
+                <div style="font-size:10px; color:var(--tan); margin-top:2px;">Fast dirt · Castellano up</div>
+              </div>
+
+              <div style="background:rgba(245,240,230,0.04); border-left:2px solid var(--gold); border-radius:4px; padding:10px 12px;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                  <span style="font-family:'DM Mono',monospace; font-size:8px; letter-spacing:0.14em; color:var(--gold); text-transform:uppercase;">Race Result</span>
+                  <span style="font-family:'DM Mono',monospace; font-size:8px; color:var(--fog);">Oct 18</span>
+                </div>
+                <div style="font-size:12px; color:var(--cream); font-weight:500;">Keeneland R7 · 3rd / 9</div>
+                <div style="font-size:10px; color:var(--tan); margin-top:2px;">Beyer 91 · $8,500 purse</div>
+              </div>
+
+              <div style="background:rgba(245,240,230,0.04); border-left:2px solid var(--gold); border-radius:4px; padding:10px 12px;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                  <span style="font-family:'DM Mono',monospace; font-size:8px; letter-spacing:0.14em; color:var(--gold); text-transform:uppercase;">Vet Visit</span>
+                  <span style="font-family:'DM Mono',monospace; font-size:8px; color:var(--fog);">Oct 18</span>
+                </div>
+                <div style="font-size:12px; color:var(--cream); font-weight:500;">Dr. Mendoza · $380</div>
+                <div style="font-size:10px; color:var(--tan); margin-top:2px;">Flunixin 500mg · LF watch</div>
+              </div>
+
+              <div style="background:rgba(245,240,230,0.04); border-left:2px solid var(--gold); border-radius:4px; padding:10px 12px;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                  <span style="font-family:'DM Mono',monospace; font-size:8px; letter-spacing:0.14em; color:var(--gold); text-transform:uppercase;">Medication</span>
+                  <span style="font-family:'DM Mono',monospace; font-size:8px; color:var(--fog);">Oct 18</span>
+                </div>
+                <div style="font-size:12px; color:var(--cream); font-weight:500;">Flunixin 500mg IM</div>
+                <div style="font-size:10px; color:var(--tan); margin-top:2px;">Parsed from trainer text</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- "Works with" strip -->
+    <div style="text-align:center; margin-bottom:36px; position:relative;">
+      <p style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.22em; color:var(--gold); text-transform:uppercase; margin-bottom:12px;">Works with</p>
+      <p style="font-size:14px; color:var(--tan); max-width:640px; margin:0 auto; line-height:1.8;">JPG · PNG · HEIC · PDF · Screenshots · Camera photos · Scanned documents · Handwritten notes · Tables · Invoices · Text messages · Equibase · DRF · Vet portals</p>
+    </div>
+
+    <!-- Category tiles -->
+    <div class="import-tiles" style="display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; position:relative;">
+      <div class="reveal" style="background:rgba(245,240,230,0.03); border:0.5px solid rgba(200,185,154,0.12); border-radius:12px; padding:22px 18px;">
+        <div style="width:36px; height:36px; background:rgba(201,146,42,0.12); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9922a" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.06em; color:var(--cream); margin-bottom:6px;">Training logs</div>
+        <div style="font-size:12px; color:var(--fog); line-height:1.6;">Whiteboard photos, stopwatch screenshots, clocker sheets — distance, time, surface, jockey extracted</div>
+      </div>
+
+      <div class="reveal" style="background:rgba(245,240,230,0.03); border:0.5px solid rgba(200,185,154,0.12); border-radius:12px; padding:22px 18px;">
+        <div style="width:36px; height:36px; background:rgba(201,146,42,0.12); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9922a" stroke-width="1.8" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.06em; color:var(--cream); margin-bottom:6px;">Race results</div>
+        <div style="font-size:12px; color:var(--fog); line-height:1.6;">Equibase, DRF, chart photos, PDFs — finish, Beyer, conditions, purse auto-attached</div>
+      </div>
+
+      <div class="reveal" style="background:rgba(245,240,230,0.03); border:0.5px solid rgba(200,185,154,0.12); border-radius:12px; padding:22px 18px;">
+        <div style="width:36px; height:36px; background:rgba(201,146,42,0.12); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9922a" stroke-width="1.8" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.06em; color:var(--cream); margin-bottom:6px;">Vet & farrier</div>
+        <div style="font-size:12px; color:var(--fog); line-height:1.6;">Invoices, exam notes, vaccinations, lab results — logged with meds, costs, and follow-up flags</div>
+      </div>
+
+      <div class="reveal" style="background:rgba(245,240,230,0.03); border:0.5px solid rgba(200,185,154,0.12); border-radius:12px; padding:22px 18px;">
+        <div style="width:36px; height:36px; background:rgba(201,146,42,0.12); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9922a" stroke-width="1.8" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.06em; color:var(--cream); margin-bottom:6px;">Review, then save</div>
+        <div style="font-size:12px; color:var(--fog); line-height:1.6;">See exactly what the AI extracted. Fix with a tap. Nothing hits your records without you confirming</div>
+      </div>
+    </div>
+
+      <!-- Left: Import visual mockup -->
+      <div class="reveal">
+        <div style="position:relative;">
+          <!-- Source document card -->
+          <div style="background:#fffcf7; border-radius:14px; padding:18px; border:0.5px solid #e0dbd0; transform: rotate(-3deg); box-shadow: 0 10px 40px rgba(0,0,0,0.4); max-width:300px;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px; padding-bottom:10px; border-bottom:0.5px solid #e0dbd0;">
+              <div style="width:28px; height:28px; background:#a63d2f; border-radius:6px; display:flex; align-items:center; justify-content:center;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              <div>
+                <div style="font-size:11px; font-weight:600; color:#1a1a1a; font-family:'DM Sans',sans-serif;">vet_report_oct18.pdf</div>
+                <div style="font-size:9px; color:#7a7268; font-family:'DM Mono',monospace;">UPLOADED · 2.1 MB</div>
+              </div>
+            </div>
+            <!-- Fake handwritten / report content -->
+            <div style="font-family: 'DM Mono', monospace; font-size:9px; color:#3d3d3a; line-height:1.7;">
+              <div style="font-weight:600; font-size:10px; margin-bottom:6px; color:#1a1a1a;">DR. A. MENDOZA — EQUINE VET</div>
+              <div>Patient: Thunder Strike (TB Mare, 4yo)</div>
+              <div>Exam date: Oct 18, 2025</div>
+              <div style="margin-top:6px; padding-top:6px; border-top:0.5px dashed #e0dbd0;">
+                <div>• Pre-race exam + endoscope</div>
+                <div>• LF fetlock — mild effusion, monitor</div>
+                <div>• Flunixin 500mg IM administered</div>
+                <div>• Cleared for Keeneland R7</div>
+              </div>
+              <div style="margin-top:6px; padding-top:6px; border-top:0.5px dashed #e0dbd0; font-size:8px; color:#7a7268;">
+                Invoice: $380.00 · Paid
+              </div>
+            </div>
+          </div>
+
+          <!-- Processing arrow/badge -->
+          <div style="display:flex; align-items:center; justify-content:center; margin:18px 0; gap:10px;">
+            <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(201,146,42,0.12); border:0.5px solid rgba(201,146,42,0.35); padding:8px 14px; border-radius:20px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c9922a" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              <span style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.14em; color:var(--gold); text-transform:uppercase;">AI processing</span>
+            </div>
+          </div>
+
+          <!-- Parsed output card -->
+          <div style="background: var(--track); border-radius:14px; padding:18px; border:1px solid rgba(201,146,42,0.4); transform: rotate(2deg); box-shadow: 0 10px 40px rgba(0,0,0,0.5); max-width:320px; margin-left:auto;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+              <div style="font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.18em; color:var(--gold); text-transform:uppercase;">Imported to Furlong</div>
+              <span style="font-size:9px; padding:3px 8px; border-radius:20px; background:rgba(74,103,65,0.25); color:#7ab86e; font-family:'DM Mono',monospace; letter-spacing:0.08em;">✓ SAVED</span>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="display:flex; justify-content:space-between; gap:10px; font-size:11px;">
+                <span style="color:var(--fog); font-family:'DM Mono',monospace; letter-spacing:0.06em;">HORSE</span>
+                <span style="color:var(--cream); font-weight:500;">Thunder Strike</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; gap:10px; font-size:11px;">
+                <span style="color:var(--fog); font-family:'DM Mono',monospace; letter-spacing:0.06em;">TYPE</span>
+                <span style="color:var(--cream); font-weight:500;">Vet Visit</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; gap:10px; font-size:11px;">
+                <span style="color:var(--fog); font-family:'DM Mono',monospace; letter-spacing:0.06em;">DATE</span>
+                <span style="color:var(--cream); font-weight:500;">Oct 18, 2025</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; gap:10px; font-size:11px;">
+                <span style="color:var(--fog); font-family:'DM Mono',monospace; letter-spacing:0.06em;">MED</span>
+                <span style="color:var(--cream); font-weight:500;">Flunixin 500mg IM</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; gap:10px; font-size:11px;">
+                <span style="color:var(--fog); font-family:'DM Mono',monospace; letter-spacing:0.06em;">FLAG</span>
+                <span style="color:#c9922a; font-weight:500;">LF fetlock — watch</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; gap:10px; font-size:11px; padding-top:8px; border-top:0.5px solid rgba(200,185,154,0.15);">
+                <span style="color:var(--fog); font-family:'DM Mono',monospace; letter-spacing:0.06em;">COST</span>
+                <span style="color:var(--gold); font-weight:600; font-family:'DM Mono',monospace;">$380.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: copy -->
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <span style="font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.22em; padding:4px 10px; background:var(--gold); color:var(--white); border-radius:4px;">NEW</span>
+          <p class="section-eyebrow" style="margin:0; color:var(--gold);">Smart Import</p>
+        </div>
+        <h2 class="section-title reveal" style="color:var(--cream);">Snap it.<br>Import it.<br><span style="color:var(--gold);">Done.</span></h2>
+        <p class="section-body reveal" style="margin-bottom:24px;">Photo of a handwritten workout sheet. Screenshot of a race result. PDF from your vet. Furlong's AI reads any of it — and files the data exactly where it belongs. No retyping. No formatting. No missed details.</p>
+        <p class="section-body reveal" style="margin-bottom:28px;">Literally import almost anything — we'll sort out what's a training note, a race entry, a medication, or an invoice line, and attach it to the right horse.</p>
+
+        <div class="reveal" style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <div style="width:24px; height:24px; border-radius:50%; background:rgba(201,146,42,0.15); border:0.5px solid rgba(201,146,42,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c9922a" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p style="font-family:'DM Sans',sans-serif; font-size:14px; font-weight:300; color:var(--tan); line-height:1.6; margin:0;"><strong style="color:var(--cream); font-weight:500;">Training logs</strong> — snap the whiteboard, a stopwatch screenshot, or the clocker's sheet; we'll extract distance, time, surface, jockey and log the work</p>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <div style="width:24px; height:24px; border-radius:50%; background:rgba(201,146,42,0.15); border:0.5px solid rgba(201,146,42,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c9922a" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p style="font-family:'DM Sans',sans-serif; font-size:14px; font-weight:300; color:var(--tan); line-height:1.6; margin:0;"><strong style="color:var(--cream); font-weight:500;">Race results</strong> — Equibase screenshot, chart photo, or PDF — we pull finish, Beyer, conditions, purse, and attach it to the horse's race history</p>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <div style="width:24px; height:24px; border-radius:50%; background:rgba(201,146,42,0.15); border:0.5px solid rgba(201,146,42,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c9922a" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p style="font-family:'DM Sans',sans-serif; font-size:14px; font-weight:300; color:var(--tan); line-height:1.6; margin:0;"><strong style="color:var(--cream); font-weight:500;">Vet & farrier records</strong> — invoices, exam notes, vaccination records, lab results — parsed into health logs with medications, costs, and follow-up flags</p>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <div style="width:24px; height:24px; border-radius:50%; background:rgba(201,146,42,0.15); border:0.5px solid rgba(201,146,42,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c9922a" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p style="font-family:'DM Sans',sans-serif; font-size:14px; font-weight:300; color:var(--tan); line-height:1.6; margin:0;"><strong style="color:var(--cream); font-weight:500;">Review before it saves</strong> — the AI shows you exactly what it extracted. Tap to fix anything, then confirm. Nothing hits your records without you seeing it first</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <div class="mockup-section">
   <div>
     <p class="section-eyebrow reveal">In practice</p>
